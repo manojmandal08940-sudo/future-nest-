@@ -1,0 +1,860 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FutureNest NeoShield Identity Suite</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & Noto Sans Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for crisp cyber/dashboard icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans Devanagari', 'Segoe UI', 'sans-serif'],
+          },
+          colors: {
+            navyDark: '#00152b',
+            navyDeep: '#001f3f',
+            navyMid: '#003366',
+            cyberCyan: '#00bfff',
+            cyberGold: '#ffd700',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-[#00152b] via-[#001f3f] to-[#003366] text-white font-sans antialiased selection:bg-[#00bfff] selection:text-[#00152b]">
+
+  <!-- Top Navigation Bar -->
+  <nav class="sticky top-0 z-40 backdrop-blur-md bg-[#00152b]/85 border-b border-cyan-500/20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#00bfff] to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+          <i class="fa-solid fa-shield-halved text-[#00152b] text-lg"></i>
+        </div>
+        <div>
+          <span class="font-bold text-base sm:text-lg tracking-wide text-white">FutureNest <span class="text-[#00bfff]">NeoShield</span></span>
+          <p class="text-[11px] text-[#ffd700] leading-none">Identity & Quantum Security</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm">
+        <a href="#smart-dashboard" class="px-3 py-2 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-[#00bfff] border border-cyan-400/30 transition font-medium">
+          <i class="fa-solid fa-gauge-high mr-1.5"></i>Smart Dashboard
+        </a>
+        <a href="#core-modules" class="hidden md:inline-block px-3 py-2 rounded-lg hover:bg-white/10 text-slate-200 transition">Modules</a>
+        <a href="#roadmap-section" class="hidden md:inline-block px-3 py-2 rounded-lg hover:bg-white/10 text-slate-200 transition">Roadmap</a>
+        <button id="nav-chat-btn" class="px-3 py-2 rounded-lg bg-gradient-to-r from-[#ffd700] to-amber-500 text-[#00152b] font-semibold shadow-md shadow-amber-500/20 hover:brightness-105 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-robot"></i>
+          <span>AI सहायक</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header Section -->
+  <header class="relative overflow-hidden text-center py-14 sm:py-20 px-4 border-b border-cyan-500/20 bg-[radial-gradient(circle_at_center,#004080_0%,#001f3f_70%,#00152b_100%)]">
+    <div class="max-w-4xl mx-auto relative z-10">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-[#00bfff] text-xs sm:text-sm font-medium mb-5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>Quantum-Safe Digital Identity Platform • 2026 Edition</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-[#00bfff] tracking-tight mb-3 drop-shadow">
+        FutureNest NeoShield Identity Suite
+      </h1>
+      <h2 class="text-lg sm:text-2xl font-semibold italic text-[#ffd700] mb-6">
+        सुरक्षा और पहचान — एक ही छत के नीचे
+      </h2>
+      <p class="text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed">
+        Smart Life, Secure Data. Future Ready. — बायोमेट्रिक पहचान, ब्लॉकचेन और क्वांटम एन्क्रिप्शन से लैस आपका संपूर्ण डिजिटल सुरक्षा कवच।
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 space-y-10">
+
+    <!-- ========================================================= -->
+    <!-- 1. INTERACTIVE SMART DASHBOARD (स्मार्ट डैशबोर्ड)         -->
+    <!-- ========================================================= -->
+    <section id="smart-dashboard" class="rounded-2xl bg-[#001933]/90 border border-cyan-400/30 p-5 sm:p-8 shadow-2xl shadow-cyan-500/10">
+      <!-- Dashboard Header & Security Scan Action -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
+        <div>
+          <div class="flex items-center gap-2.5">
+            <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-semibold">
+              <i class="fa-solid fa-circle-check mr-1"></i>LIVE ACTIVE
+            </span>
+            <h3 class="text-xl sm:text-2xl font-bold text-[#00bfff]">
+              Smart Dashboard — स्मार्ट डैशबोर्ड
+            </h3>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1">
+            रीयल-टाइम पहचान निगरानी, क्वांटम एन्क्रिप्शन नियंत्रण और थ्रेट डिफेंस मॉनिटर
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <button id="run-scan-btn" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#00bfff] to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-[#00152b] font-bold text-sm shadow-lg shadow-cyan-500/25 transition flex items-center gap-2 cursor-pointer">
+            <i id="scan-icon" class="fa-solid fa-radar"></i>
+            <span id="scan-btn-text">सिक्योरिटी स्कैन चलाएं (Run Scan)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scan Progress Bar (Hidden until scan runs) -->
+      <div id="scan-progress-wrapper" class="hidden mt-5 p-4 rounded-xl bg-cyan-950/60 border border-cyan-400/30">
+        <div class="flex justify-between text-xs sm:text-sm mb-2">
+          <span id="scan-status-label" class="text-[#00bfff] font-medium">क्वांटम और बायोमेट्रिक नोड्स की जांच हो रही है...</span>
+          <span id="scan-percent" class="text-[#ffd700] font-bold">0%</span>
+        </div>
+        <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+          <div id="scan-bar" class="h-full bg-gradient-to-r from-[#00bfff] to-[#ffd700] rounded-full transition-all duration-200" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Real-Time KPI Metrics Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+        <!-- Metric 1: Defense Score -->
+        <div class="rounded-xl bg-white/5 border border-cyan-400/20 p-4 hover:border-cyan-400/50 transition">
+          <div class="flex items-center justify-between text-slate-300 text-xs mb-2">
+            <span>Threat Defense Score</span>
+            <i class="fa-solid fa-shield-virus text-[#00bfff] text-base"></i>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <span id="metric-score" class="text-2xl sm:text-3xl font-extrabold text-white">99.4%</span>
+            <span id="metric-score-badge" class="text-xs text-emerald-400 font-medium">Optimal</span>
+          </div>
+          <p class="text-[11px] text-slate-400 mt-1">सुरक्षा स्कोर • सक्रिय मॉड्यूल आधारित</p>
+        </div>
+
+        <!-- Metric 2: Quantum Encryption -->
+        <div class="rounded-xl bg-white/5 border border-cyan-400/20 p-4 hover:border-cyan-400/50 transition">
+          <div class="flex items-center justify-between text-slate-300 text-xs mb-2">
+            <span>Quantum Encryption</span>
+            <i class="fa-solid fa-atom text-[#ffd700] text-base"></i>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <span id="metric-quantum" class="text-2xl sm:text-3xl font-extrabold text-[#ffd700]">QKD-512</span>
+            <span class="text-xs text-cyan-300 font-medium">Active</span>
+          </div>
+          <p class="text-[11px] text-slate-400 mt-1">पोस्ट-क्वांटम क्रिप्टोग्राफी एन्क्रिप्शन</p>
+        </div>
+
+        <!-- Metric 3: Verified Biometric IDs -->
+        <div class="rounded-xl bg-white/5 border border-cyan-400/20 p-4 hover:border-cyan-400/50 transition">
+          <div class="flex items-center justify-between text-slate-300 text-xs mb-2">
+            <span>Active Biometric IDs</span>
+            <i class="fa-solid fa-fingerprint text-emerald-400 text-base"></i>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <span id="metric-ids" class="text-2xl sm:text-3xl font-extrabold text-white">1,284</span>
+            <span class="text-xs text-emerald-400 font-medium">+12 today</span>
+          </div>
+          <p class="text-[11px] text-slate-400 mt-1">ब्लॉकचेन सत्यापित डिजिटल पहचान</p>
+        </div>
+
+        <!-- Metric 4: Cloud Identity Vault -->
+        <div class="rounded-xl bg-white/5 border border-cyan-400/20 p-4 hover:border-cyan-400/50 transition">
+          <div class="flex items-center justify-between text-slate-300 text-xs mb-2">
+            <span>Cloud Identity Vault</span>
+            <i class="fa-solid fa-vault text-purple-400 text-base"></i>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <span id="metric-vault" class="text-2xl sm:text-3xl font-extrabold text-white">4.2 TB</span>
+            <span class="text-xs text-slate-300 font-medium">/ 10 TB</span>
+          </div>
+          <p class="text-[11px] text-slate-400 mt-1">जीरो-नॉलेज एन्क्रिप्टेड स्टोरेज</p>
+        </div>
+      </div>
+
+      <!-- Interactive Security Controls & Live Activity Feed -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6">
+        <!-- Left: Interactive Module Switches -->
+        <div class="lg:col-span-6 rounded-xl bg-white/5 border border-white/10 p-5">
+          <h4 class="text-sm sm:text-base font-bold text-[#ffd700] mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-sliders"></i>
+            <span>सुरक्षा नियंत्रण (Active Module Controls)</span>
+          </h4>
+
+          <div class="space-y-3" id="controls-list">
+            <!-- Toggle 1 -->
+            <div class="flex items-center justify-between p-3 rounded-xl bg-[#00152b]/70 border border-white/10">
+              <div>
+                <p class="text-sm font-semibold text-white">Cyber Defense Shield</p>
+                <p class="text-xs text-slate-400">रीयल-टाइम DDoS और मैलवेयर सुरक्षा</p>
+              </div>
+              <button type="button" data-module="Cyber Defense Shield" data-active="true" class="module-toggle w-12 h-6 rounded-full bg-emerald-500 p-1 transition-colors duration-200 flex items-center cursor-pointer" aria-pressed="true">
+                <span class="toggle-dot w-4 h-4 rounded-full bg-white shadow transform translate-x-6 transition-transform duration-200"></span>
+              </button>
+            </div>
+
+            <!-- Toggle 2 -->
+            <div class="flex items-center justify-between p-3 rounded-xl bg-[#00152b]/70 border border-white/10">
+              <div>
+                <p class="text-sm font-semibold text-white">AI Fraud Detection (Behavioral)</p>
+                <p class="text-xs text-slate-400">संदिग्ध लॉगिन और धोखाधड़ी की पहचान</p>
+              </div>
+              <button type="button" data-module="AI Fraud Detection" data-active="true" class="module-toggle w-12 h-6 rounded-full bg-emerald-500 p-1 transition-colors duration-200 flex items-center cursor-pointer" aria-pressed="true">
+                <span class="toggle-dot w-4 h-4 rounded-full bg-white shadow transform translate-x-6 transition-transform duration-200"></span>
+              </button>
+            </div>
+
+            <!-- Toggle 3 -->
+            <div class="flex items-center justify-between p-3 rounded-xl bg-[#00152b]/70 border border-white/10">
+              <div>
+                <p class="text-sm font-semibold text-white">Quantum Encryption Lock</p>
+                <p class="text-xs text-slate-400">क्वांटम-रेसिस्टेंट डेटा एन्क्रिप्शन</p>
+              </div>
+              <button type="button" data-module="Quantum Encryption Lock" data-active="true" class="module-toggle w-12 h-6 rounded-full bg-emerald-500 p-1 transition-colors duration-200 flex items-center cursor-pointer" aria-pressed="true">
+                <span class="toggle-dot w-4 h-4 rounded-full bg-white shadow transform translate-x-6 transition-transform duration-200"></span>
+              </button>
+            </div>
+
+            <!-- Toggle 4 -->
+            <div class="flex items-center justify-between p-3 rounded-xl bg-[#00152b]/70 border border-white/10">
+              <div>
+                <p class="text-sm font-semibold text-white">IoT Smart Device Auto-Sync</p>
+                <p class="text-xs text-slate-400">स्मार्ट होम और कनेक्टेड डिवाइस सुरक्षा</p>
+              </div>
+              <button type="button" data-module="IoT Smart Device Auto-Sync" data-active="true" class="module-toggle w-12 h-6 rounded-full bg-emerald-500 p-1 transition-colors duration-200 flex items-center cursor-pointer" aria-pressed="true">
+                <span class="toggle-dot w-4 h-4 rounded-full bg-white shadow transform translate-x-6 transition-transform duration-200"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Live Security Activity Feed -->
+        <div class="lg:col-span-6 rounded-xl bg-white/5 border border-white/10 p-5 flex flex-col">
+          <div class="flex items-center justify-between mb-4">
+            <h4 class="text-sm sm:text-base font-bold text-[#00bfff] flex items-center gap-2">
+              <i class="fa-solid fa-terminal"></i>
+              <span>लाइव सुरक्षा लॉग (Security Activity Feed)</span>
+            </h4>
+            <button id="simulate-event-btn" class="text-xs px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-cyan-300 transition cursor-pointer">
+              + Test Event
+            </button>
+          </div>
+
+          <div id="activity-log" class="space-y-2.5 max-h-64 overflow-y-auto pr-1 text-xs">
+            <!-- Initial log entries populated by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 2. CORE PLATFORM SECTIONS (Preserved & Styled)            -->
+    <!-- ========================================================= -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Vision & Mission -->
+      <div class="rounded-2xl bg-white/10 backdrop-blur-sm border border-cyan-400/25 p-6 shadow-lg shadow-cyan-500/10 hover:border-cyan-400/50 transition">
+        <h3 class="text-lg sm:text-xl font-bold text-[#00bfff] mb-3 flex items-center gap-2">
+          <span>🔹 Vision & Mission</span>
+        </h3>
+        <p class="text-slate-100 leading-relaxed">
+          <strong class="text-[#ffd700]">Smart Life, Secure Data. Future Ready.</strong><br />
+          स्मार्ट लाइफ और सुरक्षित डेटा का भविष्य — हर नागरिक और संस्था को एकीकृत, पारदर्शी और क्वांटम-सुरक्षित डिजिटल पहचान प्रदान करना।
+        </p>
+      </div>
+
+      <!-- Technology Stack & Positioning -->
+      <div class="rounded-2xl bg-white/10 backdrop-blur-sm border border-cyan-400/25 p-6 shadow-lg shadow-cyan-500/10 hover:border-cyan-400/50 transition space-y-4">
+        <div>
+          <h3 class="text-lg sm:text-xl font-bold text-[#00bfff] mb-2">🔹 Technology Stack</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/30 text-xs font-semibold text-cyan-200">AI (Artificial Intelligence)</span>
+            <span class="px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-xs font-semibold text-blue-200">Blockchain</span>
+            <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 text-xs font-semibold text-[#ffd700]">Quantum Encryption</span>
+            <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-xs font-semibold text-emerald-200">IoT Integration</span>
+          </div>
+        </div>
+
+        <div class="pt-2 border-t border-white/10">
+          <h3 class="text-lg sm:text-xl font-bold text-[#00bfff] mb-1">🔹 Tagline & Positioning</h3>
+          <p class="text-sm text-slate-200">
+            <strong class="text-[#ffd700]">Tagline:</strong> सुरक्षा और पहचान — एक ही छत के नीचे<br />
+            <strong class="text-[#ffd700]">Positioning:</strong> Unified Platform for Digital Identity & Quantum‑Safe Security
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Modules Grid -->
+    <section id="core-modules" class="rounded-2xl bg-white/10 backdrop-blur-sm border border-cyan-400/25 p-6 sm:p-8 shadow-lg shadow-cyan-500/10">
+      <h3 class="text-xl sm:text-2xl font-bold text-[#00bfff] mb-5">🔹 Core Modules</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="p-4 rounded-xl bg-[#00152b]/70 border border-cyan-400/20 hover:border-[#00bfff] transition">
+          <div class="text-[#ffd700] text-lg mb-1"><i class="fa-solid fa-id-card-clip"></i></div>
+          <h4 class="font-bold text-white">AI Identity Hub</h4>
+          <p class="text-xs text-slate-300 mt-1">Biometric & Blockchain ID — बहु-स्तरीय बायोमेट्रिक और विकेंद्रीकृत ब्लॉकचेन पहचान।</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[#00152b]/70 border border-cyan-400/20 hover:border-[#00bfff] transition">
+          <div class="text-[#00bfff] text-lg mb-1"><i class="fa-solid fa-shield-halved"></i></div>
+          <h4 class="font-bold text-white">Cyber Defense Layer</h4>
+          <p class="text-xs text-slate-300 mt-1">Threat Protection & Quantum Encryption — साइबर हमलों से रीयल-टाइम बचाव।</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[#00152b]/70 border border-cyan-400/20 hover:border-[#00bfff] transition">
+          <div class="text-emerald-400 text-lg mb-1"><i class="fa-solid fa-brain"></i></div>
+          <h4 class="font-bold text-white">Behavioral Analytics</h4>
+          <p class="text-xs text-slate-300 mt-1">AI Fraud Detection — उपयोगकर्ता व्यवहार विश्लेषण द्वारा तत्काल फ्रॉड अलर्ट।</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[#00152b]/70 border border-cyan-400/20 hover:border-[#00bfff] transition">
+          <div class="text-purple-400 text-lg mb-1"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+          <h4 class="font-bold text-white">Cloud Identity Vault</h4>
+          <p class="text-xs text-slate-300 mt-1">Secure Data Storage — गोपनीय दस्तावेजों और क्रेडेंशियल्स के लिए सुरक्षित वॉल्ट।</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[#00152b]/70 border border-cyan-400/20 hover:border-[#00bfff] transition sm:col-span-2 lg:col-span-2">
+          <div class="text-[#ffd700] text-lg mb-1"><i class="fa-solid fa-display"></i></div>
+          <h4 class="font-bold text-white">Smart Dashboard</h4>
+          <p class="text-xs text-slate-300 mt-1">Monitoring & Control — सभी सुरक्षा मॉड्यूल्स, IoT उपकरणों और लाइव थ्रेट डेटा का एकीकृत नियंत्रण केंद्र।</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Development Roadmap -->
+    <section id="roadmap-section" class="rounded-2xl bg-white/10 backdrop-blur-sm border border-cyan-400/25 p-6 sm:p-8 shadow-lg shadow-cyan-500/10">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5">
+        <h3 class="text-xl sm:text-2xl font-bold text-[#00bfff]">🔹 Development Roadmap</h3>
+        <span class="text-xs text-[#ffd700]">विवरण देखने के लिए किसी भी चरण (Phase) पर क्लिक करें</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" id="roadmap-phases">
+        <!-- Phase buttons rendered via JS -->
+      </div>
+
+      <div id="roadmap-detail-box" class="mt-4 p-4 rounded-xl bg-[#00152b]/80 border border-cyan-400/30 text-sm text-slate-200">
+        <!-- Selected phase details rendered via JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-8 px-4 bg-[#00152b] border-t border-cyan-500/20 text-xs sm:text-sm text-slate-300">
+    <p class="font-medium text-white">© 2026 FutureNest | <span class="text-[#ffd700]">Smart Life Meets Safe Life</span></p>
+    <p class="text-slate-400 mt-1">सुरक्षा और पहचान — एक ही छत के नीचे</p>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- 3. ACTIVE AI CHATBOT WIDGET (NeoShield AI सहायक)          -->
+  <!-- ========================================================= -->
+  <!-- Floating Toggle Button -->
+  <button id="chat-launcher" aria-label="Open NeoShield AI Assistant" class="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-gradient-to-tr from-[#00bfff] to-blue-600 text-[#00152b] shadow-2xl shadow-cyan-500/40 flex items-center justify-center text-2xl hover:scale-105 active:scale-95 transition cursor-pointer border-2 border-[#ffd700]">
+    <i id="launcher-icon" class="fa-solid fa-robot"></i>
+  </button>
+
+  <!-- Chat Window -->
+  <div id="chat-window" class="hidden fixed bottom-22 right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-96 max-h-[75vh] rounded-2xl bg-[#001830] border border-cyan-400/40 shadow-2xl shadow-black/60 flex flex-col overflow-hidden">
+    <!-- Chat Header -->
+    <div class="px-4 py-3 bg-gradient-to-r from-[#002b55] to-[#004080] border-b border-cyan-400/30 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-[#00bfff]/20 border border-[#00bfff] flex items-center justify-center text-[#00bfff]">
+          <i class="fa-solid fa-shield-cat"></i>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white leading-tight">NeoShield AI सहायक</h4>
+          <span class="text-[11px] text-emerald-300 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Online • हिंदी & English
+          </span>
+        </div>
+      </div>
+      <button id="close-chat-btn" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition cursor-pointer" aria-label="Close Chat">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Chat Messages Area -->
+    <div id="chat-messages" class="flex-1 p-4 space-y-3 overflow-y-auto max-h-80 text-xs sm:text-sm">
+      <div class="flex items-start gap-2.5">
+        <div class="w-7 h-7 rounded-full bg-[#00bfff]/20 text-[#00bfff] flex items-center justify-center shrink-0 mt-0.5">
+          <i class="fa-solid fa-robot text-xs"></i>
+        </div>
+        <div class="p-3 rounded-2xl rounded-tl-none bg-white/10 text-slate-100 leading-relaxed">
+          नमस्ते! मैं <strong>NeoShield AI सहायक</strong> हूँ। आप मुझसे <em>FutureNest NeoShield</em> के मॉड्यूल्स, क्वांटम सुरक्षा, बायोमेट्रिक ID या अपने डैशबोर्ड स्टेटस के बारे में हिंदी या English में कुछ भी पूछ सकते हैं।
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Prompt Chips -->
+    <div class="px-3 py-2 bg-[#001224] border-t border-white/10 flex gap-1.5 overflow-x-auto no-scrollbar">
+      <button type="button" class="quick-prompt shrink-0 px-2.5 py-1 rounded-full bg-cyan-500/15 hover:bg-cyan-500/30 border border-cyan-400/30 text-[11px] text-cyan-200 transition cursor-pointer">
+        डैशबोर्ड स्टेटस बताएं
+      </button>
+      <button type="button" class="quick-prompt shrink-0 px-2.5 py-1 rounded-full bg-amber-500/15 hover:bg-amber-500/30 border border-amber-400/30 text-[11px] text-[#ffd700] transition cursor-pointer">
+        Quantum Encryption क्या है?
+      </button>
+      <button type="button" class="quick-prompt shrink-0 px-2.5 py-1 rounded-full bg-emerald-500/15 hover:bg-emerald-500/30 border border-emerald-400/30 text-[11px] text-emerald-200 transition cursor-pointer">
+        Core Modules समझाएं
+      </button>
+    </div>
+
+    <!-- Chat Input Form -->
+    <form id="chat-form" class="p-3 bg-[#00152b] border-t border-cyan-400/20 flex items-center gap-2">
+      <input
+        id="chat-input"
+        type="text"
+        placeholder="अपना प्रश्न लिखें (Hindi/English)..."
+        autocomplete="off"
+        class="flex-1 px-3 py-2 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-400 text-xs sm:text-sm focus:outline-none focus:border-[#00bfff]"
+        required
+      />
+      <button type="submit" id="chat-send-btn" class="px-3.5 py-2 rounded-xl bg-[#00bfff] hover:bg-cyan-300 text-[#00152b] font-bold text-sm transition cursor-pointer">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- Application Logic (Smart Dashboard + Active Gemini AI Chatbot) -->
+  <script>
+    (function () {
+      // ==========================================
+      // 1. SMART DASHBOARD STATE & INTERACTIVITY
+      // ==========================================
+      const dashboardState = {
+        activeModules: {
+          'Cyber Defense Shield': true,
+          'AI Fraud Detection': true,
+          'Quantum Encryption Lock': true,
+          'IoT Smart Device Auto-Sync': true,
+        },
+        biometricIds: 1284,
+        defenseScore: 99.4,
+        lastScanTime: 'अभी (Just now)',
+      };
+
+      const activityLogEl = document.getElementById('activity-log');
+      const metricScoreEl = document.getElementById('metric-score');
+      const metricScoreBadgeEl = document.getElementById('metric-score-badge');
+      const metricIdsEl = document.getElementById('metric-ids');
+
+      function getCurrentTime() {
+        return new Date().toLocaleTimeString('hi-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      }
+
+      function addActivityLog(message, type = 'info') {
+        const colors = {
+          success: 'border-emerald-400/40 bg-emerald-950/40 text-emerald-200',
+          warning: 'border-amber-400/40 bg-amber-950/40 text-amber-200',
+          info: 'border-cyan-400/30 bg-[#00152b]/70 text-slate-200',
+        };
+        const icons = {
+          success: '<i class="fa-solid fa-circle-check text-emerald-400"></i>',
+          warning: '<i class="fa-solid fa-triangle-exclamation text-amber-400"></i>',
+          info: '<i class="fa-solid fa-shield-halved text-[#00bfff]"></i>',
+        };
+
+        const item = document.createElement('div');
+        item.className = `p-2.5 rounded-lg border ${colors[type] || colors.info} flex items-start justify-between gap-2`;
+        item.innerHTML = `
+          <div class="flex items-start gap-2">
+            <span class="mt-0.5">${icons[type] || icons.info}</span>
+            <span>${message}</span>
+          </div>
+          <span class="text-[10px] text-slate-400 shrink-0">${getCurrentTime()}</span>
+        `;
+        activityLogEl.prepend(item);
+
+        // Keep max 15 entries
+        while (activityLogEl.children.length > 15) {
+          activityLogEl.removeChild(activityLogEl.lastChild);
+        }
+      }
+
+      // Initialize initial dashboard feed
+      addActivityLog('Quantum Encryption Lock (QKD-512) सक्रिय है।', 'success');
+      addActivityLog('AI Identity Hub: 12 नए बायोमेट्रिक नोड्स ब्लॉकचेन पर सत्यापित।', 'info');
+      addActivityLog('Behavioral Analytics: कोई संदिग्ध गतिविधि नहीं मिली।', 'success');
+
+      function recalculateDefenseScore() {
+        const values = Object.values(dashboardState.activeModules);
+        const activeCount = values.filter(Boolean).length;
+        const baseScore = 72.0;
+        const perModule = 6.85;
+        const computed = Math.min(99.9, +(baseScore + activeCount * perModule).toFixed(1));
+        dashboardState.defenseScore = computed;
+        metricScoreEl.textContent = `${computed}%`;
+
+        if (activeCount === 4) {
+          metricScoreBadgeEl.textContent = 'Optimal';
+          metricScoreBadgeEl.className = 'text-xs text-emerald-400 font-medium';
+        } else if (activeCount >= 2) {
+          metricScoreBadgeEl.textContent = 'Moderate';
+          metricScoreBadgeEl.className = 'text-xs text-amber-400 font-medium';
+        } else {
+          metricScoreBadgeEl.textContent = 'At Risk';
+          metricScoreBadgeEl.className = 'text-xs text-rose-400 font-medium';
+        }
+      }
+
+      // Module Toggle Listeners
+      document.querySelectorAll('.module-toggle').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const moduleName = btn.getAttribute('data-module');
+          const isCurrentlyActive = btn.getAttribute('data-active') === 'true';
+          const nextState = !isCurrentlyActive;
+
+          btn.setAttribute('data-active', String(nextState));
+          btn.setAttribute('aria-pressed', String(nextState));
+          dashboardState.activeModules[moduleName] = nextState;
+
+          const dot = btn.querySelector('.toggle-dot');
+          if (nextState) {
+            btn.classList.remove('bg-slate-600');
+            btn.classList.add('bg-emerald-500');
+            dot.classList.add('translate-x-6');
+            addActivityLog(`${moduleName} को चालू (Enabled) किया गया।`, 'success');
+          } else {
+            btn.classList.remove('bg-emerald-500');
+            btn.classList.add('bg-slate-600');
+            dot.classList.remove('translate-x-6');
+            addActivityLog(`चेतावनी: ${moduleName} को अस्थायी रूप से बंद किया गया।`, 'warning');
+          }
+
+          recalculateDefenseScore();
+        });
+      });
+
+      // Simulate Event Button
+      const sampleEvents = [
+        { msg: 'AI Fraud Detection: अनधिकृत IP लॉगिन प्रयास को ब्लॉक किया गया।', type: 'warning' },
+        { msg: 'Cloud Identity Vault: स्वचालित क्वांटम बैकअप सफलतापूर्वक पूरा हुआ।', type: 'success' },
+        { msg: 'IoT Auto-Sync: 8 स्मार्ट होम सेंसर्स की पहचान सत्यापित की गई।', type: 'info' },
+      ];
+      let sampleIndex = 0;
+
+      document.getElementById('simulate-event-btn').addEventListener('click', () => {
+        const ev = sampleEvents[sampleIndex % sampleEvents.length];
+        sampleIndex++;
+        dashboardState.biometricIds += 1;
+        metricIdsEl.textContent = dashboardState.biometricIds.toLocaleString('en-IN');
+        addActivityLog(ev.msg, ev.type);
+      });
+
+      // Run Security Scan Animation
+      const runScanBtn = document.getElementById('run-scan-btn');
+      const scanProgressWrapper = document.getElementById('scan-progress-wrapper');
+      const scanBar = document.getElementById('scan-bar');
+      const scanPercent = document.getElementById('scan-percent');
+      const scanStatusLabel = document.getElementById('scan-status-label');
+      const scanBtnText = document.getElementById('scan-btn-text');
+      const scanIcon = document.getElementById('scan-icon');
+
+      let isScanning = false;
+      runScanBtn.addEventListener('click', () => {
+        if (isScanning) return;
+        isScanning = true;
+
+        scanProgressWrapper.classList.remove('hidden');
+        scanBtnText.textContent = 'स्कैन जारी है...';
+        scanIcon.classList.add('animate-spin');
+
+        const stages = [
+          { pct: 25, text: '1/4: Biometric & Blockchain ID लेजर की जांच...' },
+          { pct: 55, text: '2/4: Quantum Encryption कुंजियों का सत्यापन...' },
+          { pct: 80, text: '3/4: Behavioral AI थ्रेट पैटर्न स्कैन...' },
+          { pct: 100, text: '4/4: सभी सुरक्षा परतें सुरक्षित और सत्यापित!' },
+        ];
+
+        let step = 0;
+        scanBar.style.width = '10%';
+        scanPercent.textContent = '10%';
+
+        const interval = setInterval(() => {
+          if (step < stages.length) {
+            scanBar.style.width = `${stages[step].pct}%`;
+            scanPercent.textContent = `${stages[step].pct}%`;
+            scanStatusLabel.textContent = stages[step].text;
+            step++;
+          } else {
+            clearInterval(interval);
+            isScanning = false;
+            scanBtnText.textContent = 'सिक्योरिटी स्कैन चलाएं (Run Scan)';
+            scanIcon.classList.remove('animate-spin');
+            dashboardState.lastScanTime = getCurrentTime();
+            addActivityLog('पूर्ण सिस्टम सिक्योरिटी स्कैन सफल — 0 खतरे पाए गए।', 'success');
+            setTimeout(() => {
+              scanProgressWrapper.classList.add('hidden');
+              scanBar.style.width = '0%';
+            }, 2500);
+          }
+        }, 650);
+      });
+
+      // ==========================================
+      // 2. INTERACTIVE ROADMAP PHASES
+      // ==========================================
+      const roadmapData = [
+        {
+          phase: 'Phase 1',
+          title: 'Foundation',
+          status: 'Completed',
+          desc: 'कोर आर्किटेक्चर, बायोमेट्रिक डेटा मॉडल और विकेंद्रीकृत पहचान प्रोटोकॉल की स्थापना।',
+        },
+        {
+          phase: 'Phase 2',
+          title: 'Security Core',
+          status: 'Completed',
+          desc: 'पोस्ट-क्वांटम एन्क्रिप्शन (QKD-512) और जीरो-ट्रस्ट साइबर डिफेंस लेयर का निर्माण।',
+        },
+        {
+          phase: 'Phase 3',
+          title: 'Intelligence Layer',
+          status: 'Completed',
+          desc: 'AI Behavioral Analytics और रीयल-टाइम फ्रॉड डिटेक्शन इंजन का एकीकरण।',
+        },
+        {
+          phase: 'Phase 4',
+          title: 'Cloud Integration',
+          status: 'Completed',
+          desc: 'Cloud Identity Vault और मल्टी-रीजन एन्क्रिप्टेड सिंक की तैनाती।',
+        },
+        {
+          phase: 'Phase 5',
+          title: 'Dashboard & UX',
+          status: 'Active Now',
+          desc: 'इंटरैक्टिव Smart Dashboard और द्विभाषी NeoShield AI सहायक का लाइव संचालन।',
+        },
+        {
+          phase: 'Phase 6',
+          title: 'Expansion',
+          status: 'Upcoming',
+          desc: 'वैश्विक IoT स्मार्ट सिटी और एंटरप्राइज एपीआई इकोसिस्टम का विस्तार।',
+        },
+      ];
+
+      const roadmapContainer = document.getElementById('roadmap-phases');
+      const roadmapDetailBox = document.getElementById('roadmap-detail-box');
+
+      function renderRoadmap(selectedIdx = 4) {
+        roadmapContainer.innerHTML = '';
+        roadmapData.forEach((item, idx) => {
+          const isSelected = idx === selectedIdx;
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = `p-3 rounded-xl border text-left transition cursor-pointer ${
+            isSelected
+              ? 'bg-cyan-500/25 border-[#00bfff] shadow-md shadow-cyan-500/20'
+              : 'bg-[#00152b]/70 border-white/10 hover:border-cyan-400/40'
+          }`;
+          btn.innerHTML = `
+            <div class="text-[11px] font-bold ${isSelected ? 'text-[#ffd700]' : 'text-[#00bfff]'}">${item.phase}</div>
+            <div class="text-xs sm:text-sm font-semibold text-white mt-0.5">${item.title}</div>
+            <div class="text-[10px] mt-1 ${item.status === 'Active Now' ? 'text-emerald-400 font-semibold' : 'text-slate-400'}">${item.status}</div>
+          `;
+          btn.addEventListener('click', () => renderRoadmap(idx));
+          roadmapContainer.appendChild(btn);
+        });
+
+        const active = roadmapData[selectedIdx];
+        roadmapDetailBox.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+            <span class="font-bold text-[#ffd700]">${active.phase}: ${active.title}</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-[#00bfff] text-xs">${active.status}</span>
+          </div>
+          <p class="text-slate-200 text-xs sm:text-sm">${active.desc}</p>
+        `;
+      }
+      renderRoadmap(4);
+
+      // ==========================================
+      // 3. ACTIVE AI CHATBOT (GEMINI API + FALLBACK)
+      // ==========================================
+      const chatLauncher = document.getElementById('chat-launcher');
+      const navChatBtn = document.getElementById('nav-chat-btn');
+      const chatWindow = document.getElementById('chat-window');
+      const closeChatBtn = document.getElementById('close-chat-btn');
+      const chatForm = document.getElementById('chat-form');
+      const chatInput = document.getElementById('chat-input');
+      const chatMessages = document.getElementById('chat-messages');
+
+      function toggleChat(forceOpen) {
+        const isHidden = chatWindow.classList.contains('hidden');
+        const shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : isHidden;
+        if (shouldOpen) {
+          chatWindow.classList.remove('hidden');
+          chatInput.focus();
+        } else {
+          chatWindow.classList.add('hidden');
+        }
+      }
+
+      chatLauncher.addEventListener('click', () => toggleChat());
+      navChatBtn.addEventListener('click', () => toggleChat(true));
+      closeChatBtn.addEventListener('click', () => toggleChat(false));
+
+      function appendMessage(text, sender = 'bot') {
+        const wrapper = document.createElement('div');
+        if (sender === 'user') {
+          wrapper.className = 'flex justify-end';
+          wrapper.innerHTML = `
+            <div class="max-w-[82%] p-3 rounded-2xl rounded-tr-none bg-gradient-to-r from-[#00bfff] to-blue-500 text-[#00152b] font-medium leading-relaxed shadow">
+              ${escapeHtml(text)}
+            </div>
+          `;
+        } else {
+          wrapper.className = 'flex items-start gap-2.5';
+          wrapper.innerHTML = `
+            <div class="w-7 h-7 rounded-full bg-[#00bfff]/20 text-[#00bfff] flex items-center justify-center shrink-0 mt-0.5">
+              <i class="fa-solid fa-robot text-xs"></i>
+            </div>
+            <div class="max-w-[85%] p-3 rounded-2xl rounded-tl-none bg-white/10 text-slate-100 leading-relaxed">
+              ${formatBotText(text)}
+            </div>
+          `;
+        }
+        chatMessages.appendChild(wrapper);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      function appendTypingIndicator() {
+        const id = 'typing-' + Date.now();
+        const wrapper = document.createElement('div');
+        wrapper.id = id;
+        wrapper.className = 'flex items-start gap-2.5';
+        wrapper.innerHTML = `
+          <div class="w-7 h-7 rounded-full bg-[#00bfff]/20 text-[#00bfff] flex items-center justify-center shrink-0 mt-0.5">
+            <i class="fa-solid fa-robot text-xs"></i>
+          </div>
+          <div class="p-3 rounded-2xl rounded-tl-none bg-white/10 text-cyan-300 text-xs flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce" style="animation-delay: 0.15s"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce" style="animation-delay: 0.3s"></span>
+          </div>
+        `;
+        chatMessages.appendChild(wrapper);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return id;
+      }
+
+      function escapeHtml(str) {
+        return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      function formatBotText(str) {
+        const escaped = escapeHtml(str);
+        return escaped
+          .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#ffd700]">$1</strong>')
+          .replace(/\n/g, '<br />');
+      }
+
+      // Local Smart Fallback in case offline or API rate-limited
+      function getLocalSmartReply(query) {
+        const q = query.toLowerCase();
+        const activeList = Object.entries(dashboardState.activeModules)
+          .filter(([, v]) => v)
+          .map(([k]) => k)
+          .join(', ');
+
+        if (q.includes('status') || q.includes('स्टेटस') || q.includes('डैशबोर्ड') || q.includes('score')) {
+          return `**लाइव डैशबोर्ड रिपोर्ट:**\n• Threat Defense Score: **${dashboardState.defenseScore}%**\n• Active Biometric IDs: **${dashboardState.biometricIds}**\n• सक्रिय मॉड्यूल: ${activeList || 'कोई नहीं'}\n• अंतिम स्कैन: ${dashboardState.lastScanTime}`;
+        }
+        if (q.includes('quantum') || q.includes('क्वांटम')) {
+          return `**Quantum Encryption (QKD-512)** FutureNest NeoShield की सबसे उन्नत सुरक्षा परत है, जो भविष्य के क्वांटम कंप्यूटर हमलों से भी आपके बायोमेट्रिक और वित्तीय डेटा को सुरक्षित रखती है।`;
+        }
+        if (q.includes('module') || q.includes('मॉड्यूल')) {
+          return `**FutureNest NeoShield के 5 Core Modules:**\n1. **AI Identity Hub** (Biometric & Blockchain ID)\n2. **Cyber Defense Layer** (Quantum Encryption)\n3. **Behavioral Analytics** (AI Fraud Detection)\n4. **Cloud Identity Vault** (Secure Storage)\n5. **Smart Dashboard** (Monitoring & Control)`;
+        }
+        return `**FutureNest NeoShield** ("सुरक्षा और पहचान — एक ही छत के नीचे") आपका एकीकृत डिजिटल सुरक्षा प्लेटफॉर्म है। वर्तमान में आपका Threat Defense Score **${dashboardState.defenseScore}%** है। आप डैशबोर्ड से किसी भी मॉड्यूल को नियंत्रित कर सकते हैं!`;
+      }
+
+      async function askNeoShieldAI(userPrompt) {
+        const apiKey = "";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+        const activeModulesSummary = Object.entries(dashboardState.activeModules)
+          .map(([name, state]) => `${name}: ${state ? 'ON' : 'OFF'}`)
+          .join(', ');
+
+        const systemInstructionText = `You are NeoShield AI सहायक, the official intelligent cybersecurity and digital identity assistant for "FutureNest NeoShield Identity Suite" (Tagline: "सुरक्षा और पहचान — एक ही छत के नीचे").
+Respond helpfully, concisely (2-5 lines), and politely in the user's language (Hindi, Hinglish, or English).
+Current Live Dashboard Telemetry:
+- Threat Defense Score: ${dashboardState.defenseScore}%
+- Active Biometric IDs: ${dashboardState.biometricIds}
+- Quantum Encryption: QKD-512 Active
+- Module States: ${activeModulesSummary}
+- Core Modules: AI Identity Hub, Cyber Defense Layer, Behavioral Analytics, Cloud Identity Vault, Smart Dashboard.`;
+
+        const payload = {
+          contents: [{ parts: [{ text: userPrompt }] }],
+          systemInstruction: {
+            parts: [{ text: systemInstructionText }],
+          },
+        };
+
+        const delays = [1000, 2000, 4000];
+        for (let attempt = 0; attempt <= delays.length; attempt++) {
+          try {
+            const response = await fetch(apiUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+            });
+
+            if (!response.ok) {
+              throw new Error(`HTTP ${response.status}`);
+            }
+
+            const result = await response.json();
+            const reply = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (reply) {
+              return reply;
+            }
+            throw new Error('Empty response');
+          } catch (err) {
+            if (attempt < delays.length) {
+              await new Promise((res) => setTimeout(res, delays[attempt]));
+            } else {
+              return getLocalSmartReply(userPrompt);
+            }
+          }
+        }
+      }
+
+      async function handleUserMessage(text) {
+        const trimmed = text.trim();
+        if (!trimmed) return;
+
+        appendMessage(trimmed, 'user');
+        chatInput.value = '';
+        const typingId = appendTypingIndicator();
+
+        const reply = await askNeoShieldAI(trimmed);
+        const typingEl = document.getElementById(typingId);
+        if (typingEl) typingEl.remove();
+
+        appendMessage(reply, 'bot');
+      }
+
+      chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleUserMessage(chatInput.value);
+      });
+
+      document.querySelectorAll('.quick-prompt').forEach((chip) => {
+        chip.addEventListener('click', () => {
+          handleUserMessage(chip.textContent);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
+```
